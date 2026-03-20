@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-interface-standard"
+version = "0.1.0"
+description = "Schema.org for AI agents — the open standard for how businesses describe their services to AI agents"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "AiAgentKarl"}]
+keywords = ["mcp", "agent-interface", "schema", "standard", "business", "ai-agents", "protocol"]
+dependencies = ["mcp>=1.0.0", "httpx>=0.27.0", "pydantic>=2.0.0"]
+
+[project.urls]
+Homepage = "https://github.com/AiAgentKarl/agent-interface-standard"
+Repository = "https://github.com/AiAgentKarl/agent-interface-standard"
+
+[project.scripts]
+agent-interface = "src.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
